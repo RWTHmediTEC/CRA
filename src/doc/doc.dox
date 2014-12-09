@@ -1,0 +1,49 @@
+namespace CRA
+{
+
+/** \mainpage
+  *
+  * \section Overview
+  *
+  * \image  html api01.png
+  *
+  * The Carna %Registration API is meant as an unified layer between Carna and %Localizer DLL.
+  * It makes registering tools and virtual scene elements as simple as possible.
+  *
+  * \section Guide User Guide
+  *
+  * The usage of the Carna %Registration API is fairly simple.
+  *
+  * First of all, instantiate any implementation of the \ref Localizer interface:
+  * This interface represents the tracking service.
+  * If you want to keep things simple, simply choose the \ref DefaultLocalizer implementation.
+  * However, if you do require more scalability control, you might want to choose to use the \ref LazyLocalizer proxy.
+  *
+  * Now that you have your tracking service responsive, you can define any number of \ref Tool objects -
+  * those represent the objects that are trackable by your tracking service.
+  * Likely the \ref ToolByPort implementation will satisfy your needs:
+  * You must pass a reference to the previously defined \ref Localizer to their constructor.
+  *
+  * The next step is to establish logical \em links between trackable objects (tools) and your virtual scene elements.
+  * Those links basically describe which tool represents which virtual scene element.
+  * Those scene elements are represented by the \ref VirtualElement interface:
+  * Choose between the \ref LinkedObject adapter implementation and the \ref LinkedCamera.
+  * In order to establish a link, simply pass a pair of corresponding representative objects to a \ref Link instance each.
+  *
+  * The final step is to define a registration:
+  * This is done by instantiating the \ref Registration class and providing it the links defined priorly.
+  * When instantiating this class, you will have to choose some featured tool as your reference base.
+  * Furthermore you will have to provide any \f$ 4 \times 4 \f$ transforamtion matrix to the registration.
+  *
+  * That's it: now invoke Registration::updateVirtualElements periodically, e.g. by a timer.
+  *
+  * \subsection Dependencies Dependencies
+  *
+  * Requires at least Carna 2.3.
+  *
+  * \note
+  * Since CRA version 1.15 the library is adaptive to the Carna version:
+  * All Carna-dependent logic is now provided in header files and not compiled until those headers are utilized by a client with a particular Carna version.
+  */
+  
+}  // namespace CRA

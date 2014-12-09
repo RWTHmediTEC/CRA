@@ -1,0 +1,17 @@
+# Configuration for package "CRA"
+
+set( CRA_MAJOR_VERSION	    @MAJOR_VERSION@ )
+set( CRA_MINOR_VERSION	    @MINOR_VERSION@ )
+set( CRA_RELEASE_VERSION	@RELEASE_VERSION@ )
+
+set( CRA_INCLUDE	$ENV{MEDITEC_LIBS}/@PROJECT_NAME@/@FULL_VERSION@/include )
+set( CRA_LIBDIR		$ENV{MEDITEC_LIBS}/@PROJECT_NAME@/@FULL_VERSION@/bin )
+set( CRA_LIBLIST
+		optimized	@TARGET_NAME@
+		debug		@TARGET_NAME@@CMAKE_DEBUG_POSTFIX@
+	)
+
+include_directories( ${CRA_INCLUDE} )
+link_directories( ${CRA_LIBDIR} )
+
+include( $ENV{MEDITEC_LIBS}/TRTK/0.13.1/configure.cmake )

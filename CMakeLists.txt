@@ -15,7 +15,7 @@ project( CRA )
 # Target file will be named with version suffix
 ############################################
 set( MAJOR_VERSION		 1 )
-set( MINOR_VERSION		17 )
+set( MINOR_VERSION		16 )
 set( RELEASE_VERSION	 0 )
 
 set( FULL_VERSION		${MAJOR_VERSION}.${MINOR_VERSION}.${RELEASE_VERSION} )

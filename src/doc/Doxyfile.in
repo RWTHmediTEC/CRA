@@ -79,6 +79,7 @@ HTML_HEADER            =
 HTML_FOOTER            = ./footer.html
 HTML_STYLESHEET        = ./doc_00style.css
 HTML_DYNAMIC_SECTIONS  = YES
+HTML_COLORSTYLE_HUE    = 170
 USE_MATHJAX            = YES
 MATHJAX_RELPATH        = https://cdn.mathjax.org/mathjax/latest
 

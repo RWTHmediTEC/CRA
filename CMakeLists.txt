@@ -94,10 +94,16 @@ find_package( GLEW 1.7.0 REQUIRED )
 include_directories( ${GLEW_INCLUDE_DIRS} )
 
 # LocalizerDLL
-include( $ENV{MEDITEC_LIBS}/LocalizerDLL/0.1.0/configure.cmake )
+find_package( LocalizerDLL 0.1.0 REQUIRED )
+include_directories( ${LOCALIZERDLL_INCLUDE_DIR} )
+
+# MathBib
+find_package( MathBib 0.1.0 REQUIRED )
+include_directories( ${MATHBIB_INCLUDE_DIR} )
 
 # CameraCalibration
-include( $ENV{MEDITEC_LIBS}/CameraCalibration/0.1.0/configure.cmake )
+find_package( CameraCalibration 0.1.0 REQUIRED )
+include_directories( ${CAMERACALIBRATION_INCLUDE_DIR} )
 
 # Eigen
 find_package( Eigen3 3.0.5 REQUIRED )
@@ -187,9 +193,9 @@ target_link_libraries( ${TARGET_NAME}
 			${GLEW_LIBRARIES}
 			${QT_LIBRARIES}
 			${TRTK_LIBRARIES}
-			${LOCALIZERDLL_LIBLIST}
-			${MATHBIB_LIBLIST}
-			${CAMERACALIBRATION_LIBLIST}
+			${LOCALIZERDLL_LIBRARIES}
+			${MATHBIB_LIBRARIES}
+			${CAMERACALIBRATION_LIBRARIES}
 		)
 
 ############################################

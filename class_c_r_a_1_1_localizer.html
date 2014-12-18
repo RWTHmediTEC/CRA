@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Carna Registration API: Main Page</title>
+<title>Carna Registration API: CRA::Localizer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -70,8 +70,8 @@ function toggleVisibility(linkObj) {
 </div>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li id="searchli">
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -91,31 +91,63 @@ function toggleVisibility(linkObj) {
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>CRA</b>      </li>
+      <li class="navelem"><a class="el" href="class_c_r_a_1_1_localizer.html">Localizer</a>      </li>
+    </ul>
+  </div>
 </div>
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Carna Registration API Documentation</div>  </div>
+<div class="title">CRA::Localizer Class Reference</div>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="Overview"></a>
-Overview</h2>
-<div class="image">
-<img src="api01.png" alt="api01.png"/>
+<!-- doxytag: class="CRA::Localizer" -->
+<p>Defines interface for querying the bearing of tools, addressing them by ports.  
+ <a href="class_c_r_a_1_1_localizer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_localizer_8h_source.html">Localizer.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Inheritance diagram for CRA::Localizer:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
-<p>The Carna Registration API is meant as an unified layer between Carna and Localizer DLL. It makes registering tools and virtual scene elements as simple as possible.</p>
-<h2><a class="anchor" id="Guide"></a>
-User Guide</h2>
-<p>The usage of the Carna Registration API is fairly simple.</p>
-<p>First of all, instantiate any implementation of the <a class="el" href="class_c_r_a_1_1_localizer.html">Localizer</a> interface: This interface represents the tracking service. If you want to keep things simple, simply choose the <a class="el" href="class_c_r_a_1_1_default_localizer.html">DefaultLocalizer</a> implementation. However, if you do require more scalability control, you might want to choose to use the <a class="el" href="class_c_r_a_1_1_lazy_localizer.html">LazyLocalizer</a> proxy.</p>
-<p>Now that you have your tracking service responsive, you can define any number of <a class="el" href="class_c_r_a_1_1_tool.html">Tool</a> objects - those represent the objects that are trackable by your tracking service. Likely the <a class="el" href="class_c_r_a_1_1_tool_by_port.html">ToolByPort</a> implementation will satisfy your needs: You must pass a reference to the previously defined <a class="el" href="class_c_r_a_1_1_localizer.html">Localizer</a> to their constructor.</p>
-<p>The next step is to establish logical <em>links</em> between trackable objects (tools) and your virtual scene elements. Those links basically describe which tool represents which virtual scene element. Those scene elements are represented by the <a class="el" href="class_c_r_a_1_1_virtual_element.html">VirtualElement</a> interface: Choose between the <a class="el" href="class_c_r_a_1_1_linked_object.html">LinkedObject</a> adapter implementation and the <a class="el" href="class_c_r_a_1_1_linked_camera.html">LinkedCamera</a>. In order to establish a link, simply pass a pair of corresponding representative objects to a <a class="el" href="class_c_r_a_1_1_link.html">Link</a> instance each.</p>
-<p>The final step is to define a registration: This is done by instantiating the <a class="el" href="class_c_r_a_1_1_registration.html">Registration</a> class and providing it the links defined priorly. When instantiating this class, you will have to choose some featured tool as your reference base. Furthermore you will have to provide any \( 4 \times 4 \) transforamtion matrix to the registration.</p>
-<p>That's it: now invoke <a class="el" href="class_c_r_a_1_1_registration.html#adb28583ce20ed63430e0599d5202f508" title="Updates the linked virtual scene elements.">Registration::updateVirtualElements</a> periodically, e.g. by a timer.</p>
-<h3><a class="anchor" id="Dependencies"></a>
-Dependencies</h3>
-<p>Requires at least Carna 2.3.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Since CRA version 1.15 the library is adaptive to the Carna version: All Carna-dependent logic is now provided in header files and not compiled until those headers are utilized by a client with a particular Carna version. </dd></dl>
-</div></div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_c_r_a_1_1_localizer__inherit__graph.png" border="0" usemap="#_c_r_a_1_1_localizer_inherit__map" alt="Inheritance graph"/></div>
+<map name="_c_r_a_1_1_localizer_inherit__map" id="_c_r_a_1_1_localizer_inherit__map">
+<area shape="rect" id="node3" href="class_c_r_a_1_1_default_localizer.html" title="CLocalizer based implementation of the Localizer interface." alt="" coords="5,80,155,107"/><area shape="rect" id="node5" href="class_c_r_a_1_1_lazy_localizer.html" title="Lazy proxy implementation of the Localizer interface." alt="" coords="179,80,316,107"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+
+<p><a href="class_c_r_a_1_1_localizer-members.html">List of all members.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefacc9734a0b18bb58789208c8345a40"></a><!-- doxytag: member="CRA::Localizer::~Localizer" ref="aefacc9734a0b18bb58789208c8345a40" args="()" -->
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_r_a_1_1_localizer.html#aefacc9734a0b18bb58789208c8345a40">~Localizer</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a707caf8a8f5ee63aeadcf91f74282561"></a><!-- doxytag: member="CRA::Localizer::fetch" ref="a707caf8a8f5ee63aeadcf91f74282561" args="(const std::string &amp;port, Transformation &amp;out)=0" -->
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_r_a_1_1_localizer.html#a707caf8a8f5ee63aeadcf91f74282561">fetch</a> (const std::string &amp;port, Transformation &amp;out)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the bearing of the tool specified by some port. <br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Defines interface for querying the bearing of tools, addressing them by ports. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Leonid Kostrykin </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>23.3.12 - 28.3.12 </dd></dl>
+
+<p>Definition at line <a class="el" href="_localizer_8h_source.html#l00032">32</a> of file <a class="el" href="_localizer_8h_source.html">Localizer.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>D:/Documents/mediTEC Projects/CRA/master/include/CRA/<a class="el" href="_localizer_8h_source.html">Localizer.h</a></li>
+</ul>
+</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"

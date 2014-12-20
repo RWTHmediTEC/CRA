@@ -28,7 +28,7 @@ Go to: [Library Documentation](https://rwthmeditec.github.io/CRA/)
 
 * Qt ≥ 4.8
 * GLEW ≥ 1.7
-* [Carna](https://github.com/RWTHmediTEC/Carna) ≥ 2.1
+* [Carna](https://github.com/RWTHmediTEC/Carna) ≥ 2.3
 * [TRTK](https://github.com/Haenisch/TRTK) ≥ 0.13.1
 * [Eigen](http://eigen.tuxfamily.org/) ≥ 3.0.5
 * LocalizerDLL ≥ 0.1.0
